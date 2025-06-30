@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Painel Administrativo - Embracell</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Painel Administrativo</h1>
+  </header>
+
+  <section class="admin">
+    <input type="password" id="senha" placeholder="Digite a senha" />
+    <button onclick="autenticar()">Entrar</button>
+
+    <div id="painel" style="display:none;">
+      <h2>Nova Ordem de Serviço</h2>
+      <input type="text" id="cliente" placeholder="Nome do cliente" />
+      <input type="text" id="descricao" placeholder="Descrição do problema" />
+      <input type="text" id="status" placeholder="Status" />
+      <button onclick="gerarOS()">Gerar OS</button>
+      <div id="osGerada"></div>
+    </div>
+  </section>
+
+  <script src="os.js"></script>
+</body>
+</html>

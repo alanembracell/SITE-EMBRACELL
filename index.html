@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Embracell Company - Assistência Técnica</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="Embracell Company" class="logo" />
+    <h1>Embracell Company</h1>
+    <p>Assistência técnica rápida, confiável e profissional.</p>
+  </header>
+
+  <section class="orcamento">
+    <h2>Solicite um Orçamento</h2>
+    <form onsubmit="enviarWhatsApp(event)">
+      <input type="text" id="nome" placeholder="Seu nome" required />
+      <input type="text" id="modelo" placeholder="Modelo do aparelho" required />
+      <textarea id="problema" placeholder="Descreva o problema" required></textarea>
+      <button type="submit">Enviar para WhatsApp</button>
+    </form>
+  </section>
+
+  <section class="consulta">
+    <h2>Acompanhe sua Ordem de Serviço</h2>
+    <input type="text" id="osBusca" placeholder="Digite o código da OS" />
+    <button onclick="buscarOS()">Consultar</button>
+    <div id="resultadoConsulta"></div>
+  </section>
+
+  <footer>
+    <p>© 2025 Embracell Company. Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="os.js"></script>
+  <script>
+    function enviarWhatsApp(event) {
+      event.preventDefault();
+      const nome = document.getElementById('nome').value;
+      const modelo = document.getElementById('modelo').value;
+      const problema = document.getElementById('problema').value;
+      const numero = '5511931519489';
+      const texto = `Olá, me chamo ${nome}. Estou com um ${modelo} com o seguinte problema: ${problema}`;
+      const link = `https://wa.me/${numero}?text=${encodeURIComponent(texto)}`;
+      window.open(link, '_blank');
+    }
+  </script>
+</body>
+</html>
